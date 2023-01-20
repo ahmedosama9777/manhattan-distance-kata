@@ -8,8 +8,8 @@ class TestPoint(TestCase):
         self.point = Point(1, 0)
 
     def test_creation_of_point(self):
-        self.assertEqual(self.point.x, 1)
-        self.assertEqual(self.point.y, 0)
+        with self.assertRaises(AttributeError):
+            x = self.point.x
 
     def test_point_is_immutable(self):
         with self.assertRaises(AttributeError):
